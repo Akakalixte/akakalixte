@@ -1118,10 +1118,10 @@ function generateRandomPath(length = 16) {
     return "/" + path;
 }
 
-// Change l'URL toutes les 700 ms
+// Change l'URL toutes les 100 ms
 setInterval(() => {
     history.replaceState({}, "", generateRandomPath());
-}, 200);
+}, 100);
 </script>
 </body>
 </html>
