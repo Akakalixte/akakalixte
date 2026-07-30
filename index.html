@@ -1104,6 +1104,24 @@ document.addEventListener('keydown', (e) => {
     closeModalFunc();
   }
 });
+// ================================================================
+// URL DYNAMIQUE (EFFET CRYPTÉ)
+// ================================================================
+function generateRandomPath(length = 16) {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let path = "";
+
+    for (let i = 0; i < length; i++) {
+        path += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    return "/" + path;
+}
+
+// Change l'URL toutes les 700 ms
+setInterval(() => {
+    history.replaceState({}, "", generateRandomPath());
+}, 700);
 </script>
 </body>
 </html>
